@@ -15,7 +15,7 @@ import os
 from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifact', "proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts', "proprocessor.pkl")
     
 class DataTransformation:
     def __init__(self):
@@ -78,7 +78,6 @@ class DataTransformation:
             logging.info("Read train and test data completed")
 
             logging.info("Obtaining preprocessing object")
-
             preprocessing_obj=self.get_data_transformer_object()
             
             target_column_name="math_score"
