@@ -9,12 +9,17 @@ def about(request):
     #return HttpResponse("This is the about page")
     return render(request, 'about.html')
 
-
-# Create your views here.
 def contact(request):
     #return HttpResponse("This is the contact page")
     return render(request, 'contact.html')
 
 def prediction(request):
     #return HttpResponse("This is the prediction page")
-    return render(request, 'prediction.html')
+    if request.method == "post":
+        reading = float(request.POST.get('reading'))
+        writting = float(request.POST.get('writting'))
+        
+        print(reading, writting)
+        
+    else:
+        return render(request, 'prediction.html')
